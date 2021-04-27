@@ -3,20 +3,23 @@ este permite enviar datos del DOM al Componente y del Componente al DOM.-->
 <input type="text" [(ngModel)]="title">
 {{ title }}
 
+<app_product></app_product>
 <!--*ngIf nos permite añadir condicionales al codigo.
 en este caso si title es igual a 'magia' se despliega el div, de lo contrario se mantiene oculto -->
 <div *ngIf="title === 'magia'">
   este es un div
 </div>
+
+<div [ngSwitch]="title">
+  <p *ngSwitchCase="'juan'">Este es Juan </p>
+  <p *ngSwitchCase="'pedro'">Este es pedro </p>
+  <p *ngSwitchCase="'diego'">Este es diego </p>
+  <p *ngSwitchDefault>no hay match </p>
+</div>
+<div>
+
 <div>
   <button (click)="addItem()">Agregar Persona</button>
-</div>
-
-<div *ngFor="let i of products">
-  {{ i.title }}
-  <img [src]="i.image">
-  {{ i.image }}
-  {{ i.price }}
 </div>
 
 <!--*ngFor nos permitira iterar a travez de un array.
@@ -37,3 +40,15 @@ let + nombre_asignado_variable + of + nombre_array -->
     </li>  
 </ul>
 
+<!--*ngfor para recorrer objetos-->
+<div *ngFor="let i of products">
+  {{ i.title }}
+  <img [src]="i.image">
+  {{ i.image }}
+  {{ i.price }}
+</div>
+
+
+
+<!--clase componentes y decoradores-->
+<app_product></app_product>
