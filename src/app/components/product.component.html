@@ -1,5 +1,4 @@
-<div *ngFor="let i of product">
-    <img [src]="i.image">
-    <strong>{{ i.title }}</strong>
-    {{ i.price }}
-</div>
+<strong>{{ product.title }}</strong>
+{{ product.price }}
+{{ product.description }} 
+<button (click)="addCart()">agregar al carro</button>

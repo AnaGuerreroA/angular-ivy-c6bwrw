@@ -3,7 +3,11 @@ este permite enviar datos del DOM al Componente y del Componente al DOM.-->
 <input type="text" [(ngModel)]="title">
 {{ title }}
 
-<app_product></app_product>
+<!--clase componentes y decoradores-->
+<div *ngFor="let product of products; index as ind">
+  <app_product (clickAddProduct)="clickProduct($event)" [product]="product"></app_product>
+</div>
+
 <!--*ngIf nos permite añadir condicionales al codigo.
 en este caso si title es igual a 'magia' se despliega el div, de lo contrario se mantiene oculto -->
 <div *ngIf="title === 'magia'">
@@ -47,8 +51,4 @@ let + nombre_asignado_variable + of + nombre_array -->
   {{ i.image }}
   {{ i.price }}
 </div>
-
-
-
-<!--clase componentes y decoradores-->
-<app_product></app_product>
+<personas-tag></personas-tag>
