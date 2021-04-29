@@ -1,5 +1,4 @@
-
-<li *ngFor="let i of persona">
-    {{ i.nombre }}  
-    {{ i.edad }}
-</li>
+{{ persona.nombre }}
+{{ persona.edad }} 
+{{ persona.profesion }}
+<button (click)="clickPersona()">seleciona persona</button>

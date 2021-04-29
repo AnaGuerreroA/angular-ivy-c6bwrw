@@ -3,9 +3,22 @@ este permite enviar datos del DOM al Componente y del Componente al DOM.-->
 <input type="text" [(ngModel)]="title">
 {{ title }}
 
+<input type="text" [(ngModel)]="numeroUno" [(ngModel)]="numeroDos">
+
+
+{{ numeroUno| suma }}
+
+<div *ngFor="let a of personas">
+  <personas-tag (clickSeleccionaPersona)="selectPersona($event)" [persona]="a"></personas-tag>
+</div>
+
 <!--clase componentes y decoradores-->
-<div *ngFor="let product of products; index as ind">
-  <app_product (clickAddProduct)="clickProduct($event)" [product]="product"></app_product>
+<div class="product-grid">
+  <app-product 
+    *ngFor="let i of products; index as ind" 
+    (clickAddProduct)="clickProduct($event)" 
+    [product]="i">
+  </app-product>
 </div>
 
 <!--*ngIf nos permite añadir condicionales al codigo.
@@ -47,8 +60,7 @@ let + nombre_asignado_variable + of + nombre_array -->
 <!--*ngfor para recorrer objetos-->
 <div *ngFor="let i of products">
   {{ i.title }}
-  <img [src]="i.image">
+  <!--<img [src]="i.image">-->
   {{ i.image }}
   {{ i.price }}
 </div>
-<personas-tag></personas-tag>

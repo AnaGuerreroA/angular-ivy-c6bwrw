@@ -1,21 +1,17 @@
-import { Component } from '@angular/core'
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Persona } from '../persona.module';
 
 @Component({
-    selector: 'personas-tag',
+    selector: 'app-personas-tag',
     templateUrl: './persona.component.html'
 })
 
+export class PersonasComponent {
+    @Input() persona: Persona;
+    @Output() clickSeleccionaPersona: EventEmitter<any> = new EventEmitter();
 
-export class Personas {
-    persona = [{
-        nombre: 'Ana',
-        edad: 28,
-        profesion: 'Programador'
-    },
-    {
-        nombre: 'Pepe',
-        edad: 31,
-        profesion: 'Arquitecto'
+    clickPersona(): void{
+        console.log('se ha seleccionado');
+        this.clickSeleccionaPersona.emit(this.persona.nombre);
     }
-]
 }

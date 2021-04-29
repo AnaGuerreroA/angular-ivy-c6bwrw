@@ -1,4 +1,5 @@
-<strong>{{ product.title }}</strong>
-{{ product.price }}
+<strong>{{ product.title | uppercase }}</strong>
+<img [src]="product.image"/>
 {{ product.description }} 
+{{ product.price }}
 <button (click)="addCart()">agregar al carro</button>
