@@ -3,13 +3,13 @@ este permite enviar datos del DOM al Componente y del Componente al DOM.-->
 <input type="text" [(ngModel)]="title">
 {{ title }}
 
-<input type="text" [(ngModel)]="numeroUno" [(ngModel)]="numeroDos">
+<input type="text" [(ngModel)]="numeroUno" >
+<input type="text" >
 
-
-{{ numeroUno| suma }}
+{{ (numeroUno) | suma }}
 
 <div *ngFor="let a of personas">
-  <personas-tag (clickSeleccionaPersona)="selectPersona($event)" [persona]="a"></personas-tag>
+  <app-personas-tag (clickSeleccionaPersona)="selectPersona($event)" [persona]="a"></app-personas-tag>
 </div>
 
 <!--clase componentes y decoradores-->
