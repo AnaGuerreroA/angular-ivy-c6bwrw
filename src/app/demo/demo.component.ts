@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
-import { Product } from './product.module';
-import { Persona } from './persona.module';
+import { Component, OnInit } from '@angular/core';
+
+import { Persona } from '../persona.module';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-demo',
+  templateUrl: './demo.component.html',
+  styleUrls: ['./demo.component.css']
 })
+export class DemoComponent implements OnInit {
 
-export class AppComponent {
   title = 'platzi-store';
 
   items = ['Julian', 'Nicolas', 'Pedro'];
@@ -35,18 +35,20 @@ export class AppComponent {
       edad: 50,
       profesion: 'Arquitecto'
     }
-  ];
+  ];  
 
-  
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
   addItem(): void{
     this.items.push('nueva Persona');
   }
 
   deleteItem(index: number): void{
     this.items.splice(index, 1);
-  }
-
-  
+  }  
 
   selectPersona(nombre: string): void{
     console.log(nombre);

@@ -1,0 +1,16 @@
+<!--clase componentes y decoradores-->
+<div class="product-grid">
+    <app-product 
+      *ngFor="let i of products; index as ind" 
+      (clickAddProduct)="clickProduct($event)" 
+      [product]="i">
+    </app-product>
+  </div>
+
+<!--*ngfor para recorrer objetos-->
+<div *ngFor="let i of products">
+    {{ i.title }}
+    <!--<img [src]="i.image">-->
+    {{ i.image }}
+    {{ i.price }}
+  </div>
