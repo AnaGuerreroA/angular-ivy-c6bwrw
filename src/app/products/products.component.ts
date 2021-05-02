@@ -7,20 +7,20 @@ import { Product } from '../product.module';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  
+
   products: Product[] = [
     {
     id: '1',
     image: 'assets/images/camiseta.png',
     title: 'Camiseta',
-    price: 80000,
+    price: 30000,
     description: 'bla bla bla bla bla'
   },
   {
     id: '2',
     image: 'assets/images/hoodie.png',
     title: 'Hoodie',
-    price: 80000,
+    price: 10000,
     description: 'bla bla bla bla bla'
   },
   {
@@ -34,7 +34,7 @@ export class ProductsComponent implements OnInit {
     id: '4',
     image: 'assets/images/pin.png',
     title: 'Pin',
-    price: 80000,
+    price: 50000,
     description: 'bla bla bla bla bla'
   },
   {
@@ -48,7 +48,7 @@ export class ProductsComponent implements OnInit {
     id: '6',
     image: 'assets/images/stickers2.png',
     title: 'Stickers',
-    price: 80000,
+    price: 40000,
     description: 'bla bla bla bla bla'
   }];
 

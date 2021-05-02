@@ -7,6 +7,7 @@ import { Persona } from '../persona.module';
   templateUrl: './demo.component.html',
   styleUrls: ['./demo.component.css']
 })
+
 export class DemoComponent implements OnInit {
 
   title = 'platzi-store';
@@ -14,6 +15,7 @@ export class DemoComponent implements OnInit {
   items = ['Julian', 'Nicolas', 'Pedro'];
 
   numeroUno = 0;
+
   numeroDos = 0;
 
   personas: Persona[] = [
@@ -35,7 +37,7 @@ export class DemoComponent implements OnInit {
       edad: 50,
       profesion: 'Arquitecto'
     }
-  ];  
+  ];
 
   constructor() { }
 
@@ -48,10 +50,9 @@ export class DemoComponent implements OnInit {
 
   deleteItem(index: number): void{
     this.items.splice(index, 1);
-  }  
+  }
 
   selectPersona(nombre: string): void{
     console.log(nombre);
   }
-
 }
